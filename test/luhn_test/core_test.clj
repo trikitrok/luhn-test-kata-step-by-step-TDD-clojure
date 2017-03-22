@@ -10,4 +10,8 @@
   (luhn/valid? "612") => true?
   (luhn/valid? "1016") => true?
   (luhn/valid? "4044") => true?
-  (luhn/valid? "91") => true?)
+  (luhn/valid? "91") => true?
+  (luhn/valid? "49927398716") => true?
+  (luhn/valid? "79927398713") => true?
+  (luhn/valid? "49927398712") =not=> true?
+  (luhn/valid? "79927398715") =not=> true?)
