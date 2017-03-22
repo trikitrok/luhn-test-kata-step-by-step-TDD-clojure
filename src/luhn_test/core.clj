@@ -6,9 +6,9 @@
   (if (even? position) num (* 2 num)))
 
 (defn- reduce-numbers [numbers]
-  (apply +
-         (map sum-digits
-           (map-indexed double-when-at-even-position numbers))))
+  (->> (map-indexed double-when-at-even-position numbers)
+       (map sum-digits)
+       (apply +)))
 
 (defn valid? [digits]
   (let [numbers (map #(Integer/parseInt (str %)) (reverse digits))]
