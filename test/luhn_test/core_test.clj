@@ -9,4 +9,5 @@
   (luhn/valid? "18") => true?
   (luhn/valid? "612") => true?
   (luhn/valid? "1016") => true?
-  (luhn/valid? "4044") => true?)
+  (luhn/valid? "4044") => true?
+  (luhn/valid? "91") => true?)
