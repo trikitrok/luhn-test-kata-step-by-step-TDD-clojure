@@ -5,7 +5,7 @@
 (defn- double-when-at-even-position [position num]
   (if (even? position) num (* 2 num)))
 
-(defn- reduce-numbers [digits]
+(defn- reduce-digits [digits]
   (->> digits
        (reverse)
        (map #(Integer/parseInt (str %)))
@@ -14,4 +14,4 @@
        (apply +)))
 
 (defn valid? [digits]
-  (zero? (mod (reduce-numbers digits) 10)))
+  (zero? (mod (reduce-digits digits) 10)))
