@@ -7,4 +7,5 @@
   (let [numbers (map #(Integer/parseInt (str %)) (reverse digits))]
     (if (= 1 (count numbers))
       (zero? (first numbers))
-      (= 10 (reduce-numbers numbers)))))
+      (or (= 10 (reduce-numbers numbers))
+          (= 20 (reduce-numbers numbers))))))
