@@ -4,6 +4,6 @@
 
 (facts
   "about luhn test"
-  (luhn/valid? "0") => true
-  (luhn/valid? "1") => false
-  (luhn/valid? "18") => true)
+  (luhn/valid? "0") => true?
+  (luhn/valid? "1") =not=> true?
+  (luhn/valid? "18") => true?)

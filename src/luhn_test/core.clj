@@ -1,7 +1,8 @@
 (ns luhn-test.core)
 
 (defn valid? [digits]
-  (if (= 1 (count digits))
-    (zero? (Integer/parseInt digits))
-    (= 10 (+ (Integer/parseInt (str (second digits)))
-             (* 2 (Integer/parseInt (str (first digits))))))))
+  (let [numbers (map #(Integer/parseInt (str %)) digits)]
+    (if (= 1 (count numbers))
+      (zero? (first numbers))
+      (= 10 (+ (second numbers)
+               (* 2 (first numbers)))))))
