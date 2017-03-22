@@ -5,6 +5,4 @@
 
 (defn valid? [digits]
   (let [numbers (map #(Integer/parseInt (str %)) (reverse digits))]
-    (or (= 0 (reduce-numbers numbers))
-        (= 10 (reduce-numbers numbers))
-        (= 20 (reduce-numbers numbers)))))
+    (zero? (mod (reduce-numbers numbers) 10))))
