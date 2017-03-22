@@ -1,10 +1,7 @@
 (ns luhn-test.core)
 
 (defn- reduce-numbers [numbers]
-  (+ (first numbers)
-     (* 2 (second numbers))
-     (get (vec numbers) 2 0)
-     (* 2 (get (vec numbers) 3 0))))
+  (apply + (map-indexed #(if (even? %1) %2 (* 2 %2)) numbers)))
 
 (defn valid? [digits]
   (let [numbers (map #(Integer/parseInt (str %)) (reverse digits))]
