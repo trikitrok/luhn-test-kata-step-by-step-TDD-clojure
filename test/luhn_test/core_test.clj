@@ -4,13 +4,12 @@
 
 (facts
   "about luhn test"
-  (luhn/valid? "0") => true?
-  (luhn/valid? "1") =not=> true?
-  (luhn/valid? "18") => true?
-  (luhn/valid? "612") => true?
-  (luhn/valid? "1016") => true?
-  (luhn/valid? "4044") => true?
-  (luhn/valid? "91") => true?
+  (luhn/valid? "00000000000") => true?
+  (luhn/valid? "00000000001") =not=> true?
+  (luhn/valid? "00000000505") => true?
+  (luhn/valid? "00000000018") => true?
+  (luhn/valid? "00000002030") => true?
+  (luhn/valid? "00000000091") => true?
   (luhn/valid? "49927398716") => true?
   (luhn/valid? "79927398713") => true?
   (luhn/valid? "49927398712") =not=> true?
