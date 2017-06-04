@@ -3,7 +3,7 @@
 (def ^:private sum-digits #(+ (quot % 10) (mod % 10)))
 
 (defn- double-when-at-even-position [position num]
-  (if (even? position) num (* 2 num)))
+  (if (even? (inc position)) (* 2 num) num))
 
 (defn- reduce-digits [digits]
   (->> digits
