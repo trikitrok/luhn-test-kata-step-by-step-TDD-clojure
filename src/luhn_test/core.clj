@@ -14,4 +14,7 @@
        (apply +)))
 
 (defn valid? [digits]
-  (zero? (mod (reduce-digits digits) 10)))
+  (-> digits
+      (reduce-digits)
+      (mod 10)
+      (zero?)))
